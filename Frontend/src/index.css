@@ -1,0 +1,74 @@
+/* index.css - global theme + resets
+   Dark Neon Theme: deep background + neon cyan & magenta accents
+   Recommended font: 'Inter' or 'Poppins' (import below)
+*/
+
+/* Optional: add to index.html <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"> */
+:root{
+  --bg-900: #05060a;       /* page background */
+  --panel-800: #0b0f17;    /* panels / cards */
+  --muted-700: #0f1724;    /* card darker */
+  --text-100: #e6f7ff;     /* main text */
+  --muted-200: #9aa9b8;    /* secondary text */
+  --accent-cyan: #00f5ff;  /* primary neon */
+  --accent-magenta: #c400ff;/* secondary neon */
+  --accent-yellow: #ffd166;/* highlight */
+  --glass: rgba(255,255,255,0.04);
+  --glass-2: rgba(255,255,255,0.02);
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --shadow-1: 0 6px 20px rgba(0,0,0,0.6);
+  --soft-glow: 0 4px 30px rgba(0,245,255,0.08);
+  --transition: 200ms cubic-bezier(.2,.9,.3,1);
+}
+
+* { box-sizing: border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+html,body,#root { height:100%; }
+body{
+  margin:0;
+  min-height:100%;
+  background: linear-gradient(180deg, var(--bg-900) 0%, #070816 60%), radial-gradient(600px 300px at 10% 10%, rgba(0,245,255,0.04), transparent 10%), radial-gradient(400px 200px at 90% 90%, rgba(196,0,255,0.03), transparent 10%);
+  color:var(--text-100);
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  padding: 0;
+  line-height:1.45;
+}
+
+/* common containers */
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 28px 0;
+}
+
+/* card base */
+.card {
+  background: linear-gradient(180deg, var(--panel-800), rgba(255,255,255,0.01));
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* headings */
+h1,h2,h3,h4 { color:var(--text-100); margin:0 0 12px 0; }
+p { color:var(--muted-200); margin:0 0 12px; }
+
+/* inputs, buttons */
+input, textarea, select, button {
+  font-family: inherit;
+  transition: all var(--transition);
+  outline: none;
+}
+
+/* small helpers */
+.center { text-align:center; }
+.flex { display:flex; gap:12px; }
+.mt-16 { margin-top:16px; }
+.mb-12 { margin-bottom:12px; }
+
+/* small responsive */
+@media (max-width:720px){
+  .container { width:94%; padding:20px 0; }
+}
